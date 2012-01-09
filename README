@@ -5,15 +5,22 @@ First I create 16 cubes with 6 letters in each.
 
 Next, I create my primary functions: **selectLetter** and **__gotoxy**. 
 
-The first function, **selectLetter**, takes in an integer as a parameter (1-16). This number determines which cube is accessed. After determining the cube, a letter is randomly selected from the cube. 
+The first function, **selectLetter**, takes in an integer as a parameter (1-16). This number determines 
+which cube is accessed. After determining the cube, a letter is randomly selected from the cube. 
 
-The second function, **__gotoxy**, uses the coordinate system and breaks it down to x & y which can inputted in the main function.
+The second function, **__gotoxy**, uses the coordinate system and breaks it down to x & y which is 
+input in the main function.
 
-Then, I create a number array: **randNumArray**. I allocate 16 unique, random integers from 1-16 to random spots in the array.
+Then, I create a number array: **randNumArray**. I allocate 16 unique, random integers from 1-16 to 
+random spots in the array.
 
-I iterate through **randNumArray** 16 times using each random number as a parameter for the **selectLetter** function. This selects a random letter from a random cube. I then, using **if** & **else** statements and **__gotoxy**, place the letters in a 4x4 grid to make it look like a real Boggle Board.
+I iterate through **randNumArray** 16 times using each random number as a parameter for the 
+**selectLetter** function. This selects a random letter from a random cube. I then, using **if** & **else** 
+statements and **__gotoxy**, place the letters in a 4x4 grid to make it look like a real Boggle Board.
 
-I originally wrote this project after playing Boggle in English class one day and thought this would be a great challenge. I'm currently working on implementing a search algorithm to find all possible word combinations. Eventually, multiple users can play the game as if it is Boggle in real life!
+I originally wrote this project after playing Boggle in English class one day and thought this would be a 
+great challenge. I'm currently working on implementing a search algorithm to find all possible word 
+combinations. Eventually, multiple users can play the game as if it is Boggle in real life!
 
 
 
