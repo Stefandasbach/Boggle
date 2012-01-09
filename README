@@ -15,7 +15,7 @@
 
 using namespace std;
 
-const char ONE[6] = {'C', 'O', 'T', 'A', 'I', 'A'};
+const char ONE[6] = {'C', 'O', 'T', 'A', 'I', 'A'}; //ONE-SIXTEEN are the cubes of Boggle each containing 6 letters
 const char TWO[6] = {'O', 'S', 'E', 'W', 'D', 'N'};
 const char THREE[6] = {'L', 'E', 'R', 'A', 'S', 'C'};
 const char FOUR[6] = {'V', 'G', 'T', 'Z', 'E', 'I'};
@@ -33,12 +33,12 @@ const char FIFTEEN[6] = {'O', 'M', 'A', 'R', 'S', 'H'};
 const char SIXTEEN[6] = {'D', 'C', 'E', 'A', 'P', 'M'};
 
 
-char selectLetter (int randNum);
-void __gotoxy( int, int );
+char selectLetter (int randNum); //Function Prototype
+void __gotoxy( int, int ); //Function Prototype
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-    srand(unsigned(time(0)));
+    srand(unsigned(time(0))); //Allows rand to be random
 
     int randNum;
     int temp;
@@ -183,7 +183,7 @@ char selectLetter (int randNum) //Determines which letter from which cube will b
     }
 }
 
-void __gotoxy(int x, int y) //Function Definition
+void __gotoxy(int x, int y) //Allows output to point (x,y) on the screen
 {
     HANDLE hnd = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD c;
