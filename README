@@ -1,0 +1,194 @@
+// StefanDasbachBoggle.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+#include <Windows.h>
+#include <cmath>
+#include <string>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream>
+#include <ctype.h>
+
+using namespace std;
+
+const char ONE[6] = {'C', 'O', 'T', 'A', 'I', 'A'};
+const char TWO[6] = {'O', 'S', 'E', 'W', 'D', 'N'};
+const char THREE[6] = {'L', 'E', 'R', 'A', 'S', 'C'};
+const char FOUR[6] = {'V', 'G', 'T', 'Z', 'E', 'I'};
+const char FIVE[6] = {'E', 'Y', 'U', 'G', 'K', 'L'};
+const char SIX[6] = {'D', 'U', 'N', 'O', 'K', 'T'};
+const char SEVEN[6] = {'H', 'Y', 'F', 'E', 'I', 'E'};
+const char EIGHT[6] = {'D', 'V', 'N', 'Z', 'A', 'E'};
+const char NINE[6] = {'O', 'U', 'A', 'M', 'J', 'B'};
+const char TEN[6] = {'L', 'E', 'P', 'U', 'T', 'S'};
+const char ELEVEN[6] = {'N', 'E', 'P', 'I', 'H', 'S'};
+const char TWELVE[6] = {'L', 'U', 'W', 'I', 'G', 'R'};
+const char THIRTEEN[6] = {'X', 'I', 'B', 'O', 'F', 'R'};
+const char FOURTEEN[6] = {'A', 'L', 'I', 'B', 'T', 'Y'};
+const char FIFTEEN[6] = {'O', 'M', 'A', 'R', 'S', 'H'};
+const char SIXTEEN[6] = {'D', 'C', 'E', 'A', 'P', 'M'};
+
+
+char selectLetter (int randNum);
+void __gotoxy( int, int );
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    srand(unsigned(time(0)));
+
+    int randNum;
+    int temp;
+    int randNumArr[20] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+    char letter;
+    int x, y;
+
+    for (int j = 0; j < 16; j++) //Allocates numbers to random positions in randNumArr
+    {
+        randNum = j + (rand() % (16-j)); 
+        temp = randNumArr[j];
+        randNumArr[j] = randNumArr[randNum];
+        randNumArr[randNum] = temp;
+    }
+
+    for (int i = 0; i < 16; i++)
+    {
+        letter = selectLetter ( randNumArr[i] ); //SelectLetter uses RandNumArr to pick random cubes
+        if (i < 4) //The following if/else if statements determine the position of & display each letter
+        {
+            x = i*4 + 35;
+            y = 0;
+            __gotoxy( x, y );
+            cout << letter << endl;
+        }
+        else if (i < 8)
+        {
+            
+            x = (i%4) * 4 + 35;
+            y = 5;
+            __gotoxy( x, y );
+            cout << letter << endl;
+        }
+        else if (i < 12)
+        {
+            x = (i%4) * 4 + 35;
+            y = 10;
+            __gotoxy( x, y );
+            cout << letter << endl;
+        }
+        else if (i < 16)
+        {
+            x = (i%4) * 4 + 35;
+            y = 15;
+            __gotoxy( x, y );
+            cout << letter << endl;
+        }
+    }
+      return 0;
+}
+
+char selectLetter (int randNum) //Determines which letter from which cube will be used
+{
+    int x;
+    char temp;
+
+    switch (randNum)
+    {
+        case 1:
+            x = ((rand() % 5) + 0);
+            temp = ONE[x];
+            return temp;
+            break;
+        case 2:
+            x = ((rand() % 5) + 0);
+            temp = TWO[x];
+            return temp;
+            break;
+        case 3:
+            x = ((rand() % 5) + 0);
+            temp = THREE[x];
+            return temp;
+            break;
+        case 4:
+            x = ((rand() % 5) + 0);
+            temp = FOUR[x];
+            return temp;
+            break;
+        case 5:
+            x = ((rand() % 5) + 0);
+            temp = FIVE[x];
+            return temp;
+            break;
+        case 6:
+            x = ((rand() % 5) + 0);
+            temp = SIX[x];
+            return temp;
+            break;
+        case 7:
+            x = ((rand() % 5) + 0);
+            temp = SEVEN[x];
+            return temp;
+            break;
+        case 8:
+            x = ((rand() % 5) + 0);
+            temp = EIGHT[x];
+            return temp;
+            break;
+        case 9:
+            x = ((rand() % 5) + 0);
+            temp = NINE[x];
+            return temp;
+            break;
+        case 10:
+            x = ((rand() % 5) + 0);
+            temp = TEN[x];
+            return temp;
+            break;
+        case 11:
+            x = ((rand() % 5) + 0);
+            temp = ELEVEN[x];
+            return temp;
+            break;
+        case 12:
+            x = ((rand() % 5) + 0);
+            temp = TWELVE[x];
+            return temp;
+            break;
+        case 13:
+            x = ((rand() % 5) + 0);
+            temp = THIRTEEN[x];
+            return temp;
+            break;
+        case 14:
+            x = ((rand() % 5) + 0);
+            temp = FOURTEEN[x];
+            return temp;
+            break;
+        case 15:
+            x = ((rand() % 5) + 0);
+            temp = FIFTEEN[x];
+            return temp;
+            break;
+        case 16:
+            x = ((rand() % 5) + 0);
+            temp = SIXTEEN[x];
+            return temp;
+            break;
+        default:
+            cout << "Did not work" << endl;
+            break;
+    }
+}
+
+void __gotoxy(int x, int y) //Function Definition
+{
+    HANDLE hnd = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD c;
+
+    c.X = x; 
+    c.Y = y;
+    SetConsoleCursorPosition(hnd, c);
+}
